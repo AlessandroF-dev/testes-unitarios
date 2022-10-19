@@ -9,11 +9,6 @@ import java.util.Optional;
 @Service
 public class ProductService {
 
-    /**
-     * É responsável por receber uma request, setar os campos
-     * no response e devolver o response
-     */
-
     public Optional<ProductDTO> create(ProductDTO dto) {
         ProductDTO response = new ProductDTO();
         boolean isValid = validatePrice(dto.getPrice());
@@ -30,14 +25,9 @@ public class ProductService {
         return Optional.empty();
     }
 
-    /**
-     * É responsável por receber um preço e uma lista de produtos e a partir dessa lista
-     * filtrar o primeiro registro com aquele preço passado
-     */
-
     public ProductDTO getFirstByPrice(double price, List<ProductDTO> productDTOList) {
 
-        for (ProductDTO productDTO:productDTOList) {
+        for (ProductDTO productDTO : productDTOList) {
             System.out.println(productDTO.getName());
         }
         return productDTOList
@@ -47,15 +37,11 @@ public class ProductService {
                 .orElse(new ProductDTO());
     }
 
-    /**
-     * Deve validar se o preço é maior que 0, caso seja menor, deve retornar um false
-     * e impedir que o produto seja criado;
-     */
-
     public boolean validatePrice(double price) {
         if (price > 0) {
             return true;
-        }else{return false;
+        } else {
+            return false;
         }
     }
 }

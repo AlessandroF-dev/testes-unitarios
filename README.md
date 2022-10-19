@@ -23,8 +23,3 @@
 - Para Python, temos o PyTest
 - Jest para Typescript/NodeJS
 - ...
-
-## Testes unitários Aula 04/10/22
-
-- Como se testa uma classe de DTO, da mesma forma que testamos todas as outras, fornecendo a informação e esperando o resultado. (começa em instanciar o objeto, para setar os valores dos atributos no objeto).
-- AssertNotNull passando o objeto instânciado, pois precisamos receber um objeto.
